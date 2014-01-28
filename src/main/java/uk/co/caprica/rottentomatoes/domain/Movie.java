@@ -1,0 +1,269 @@
+/*
+ * This file is part of rotten-tomatoes-service.
+ *
+ * rotten-tomatoes-service is free software: you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * rotten-tomatoes-service is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with rotten-tomatoes-service.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * Copyright 2014 Caprica Software Limited.
+ */
+
+package uk.co.caprica.rottentomatoes.domain;
+
+import java.util.List;
+import java.util.Map;
+
+import javax.xml.bind.annotation.XmlAttribute;
+
+import com.google.common.base.Objects;
+
+/**
+ *
+ */
+public final class Movie {
+
+    private Integer id;
+
+    private String title;
+
+    private Integer year;
+
+    private List<String> genres;
+
+    @XmlAttribute(name="mpaa_rating")
+    private String mpaaRating;
+
+    private Integer runtime;
+
+    @XmlAttribute(name="critics_consensus")
+    private String criticsConsensus;
+
+    @XmlAttribute(name="release_dates")
+    private ReleaseDates releaseDates;
+
+    private Ratings ratings;
+
+    private String synopsis;
+
+    private Map<String,String> posters;
+
+    @XmlAttribute(name="abridged_cast")
+    private List<Cast> abridgedCast;
+
+    @XmlAttribute(name="abridged_directors")
+    private List<Director> abridgedDirectors;
+
+    private String studio;
+
+    @XmlAttribute(name="alternate_ids")
+    private Map<String,Object> alternateIds;
+
+    private Map<String,String> links;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public Integer getYear() {
+        return year;
+    }
+
+    public void setYear(Integer year) {
+        this.year = year;
+    }
+
+    public List<String> getGenres() {
+        return genres;
+    }
+
+    public void setGenres(List<String> genres) {
+        this.genres = genres;
+    }
+
+    public String getMpaaRating() {
+        return mpaaRating;
+    }
+
+    public void setMpaaRating(String mpaaRating) {
+        this.mpaaRating = mpaaRating;
+    }
+
+    public Integer getRuntime() {
+        return runtime;
+    }
+
+    public void setRuntime(Integer runtime) {
+        this.runtime = runtime;
+    }
+
+    public String getCriticsConsensus() {
+        return criticsConsensus;
+    }
+
+    public void setCriticsConsensus(String criticsConsensus) {
+        this.criticsConsensus = criticsConsensus;
+    }
+
+    public ReleaseDates getReleaseDates() {
+        return releaseDates;
+    }
+
+    public void setReleaseDates(ReleaseDates releaseDates) {
+        this.releaseDates = releaseDates;
+    }
+
+    public Ratings getRatings() {
+        return ratings;
+    }
+
+    public void setRatings(Ratings ratings) {
+        this.ratings = ratings;
+    }
+
+    public String getSynopsis() {
+        return synopsis;
+    }
+
+    public void setSynopsis(String synopsis) {
+        this.synopsis = synopsis;
+    }
+
+    public Map<String, String> getPosters() {
+        return posters;
+    }
+
+    public void setPosters(Map<String, String> posters) {
+        this.posters = posters;
+    }
+
+    public List<Cast> getAbridgedCast() {
+        return abridgedCast;
+    }
+
+    public void setAbridgedCast(List<Cast> abridgedCast) {
+        this.abridgedCast = abridgedCast;
+    }
+
+    public List<Director> getAbridgedDirectors() {
+        return abridgedDirectors;
+    }
+
+    public void setAbridgedDirectors(List<Director> abridgedDirectors) {
+        this.abridgedDirectors = abridgedDirectors;
+    }
+
+    public String getStudio() {
+        return studio;
+    }
+
+    public void setStudio(String studio) {
+        this.studio = studio;
+    }
+
+    public Map<String, Object> getAlternateIds() {
+        return alternateIds;
+    }
+
+    public void setAlternateIds(Map<String, Object> alternateIds) {
+        this.alternateIds = alternateIds;
+    }
+
+    public Map<String, String> getLinks() {
+        return links;
+    }
+
+    public void setLinks(Map<String, String> links) {
+        this.links = links;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(
+            id,
+            title,
+            year,
+            genres,
+            mpaaRating,
+            runtime,
+            criticsConsensus,
+            releaseDates,
+            ratings,
+            synopsis,
+            posters,
+            abridgedCast,
+            abridgedDirectors,
+            studio,
+            alternateIds,
+            links);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
+        }
+        if (!(obj instanceof Movie)) {
+            return false;
+        }
+        Movie other = (Movie)obj;
+        return
+            Objects.equal(id               , other.id               ) &&
+            Objects.equal(title            , other.title            ) &&
+            Objects.equal(year             , other.year             ) &&
+            Objects.equal(genres           , other.genres           ) &&
+            Objects.equal(mpaaRating       , other.mpaaRating       ) &&
+            Objects.equal(runtime          , other.runtime          ) &&
+            Objects.equal(criticsConsensus , other.criticsConsensus ) &&
+            Objects.equal(releaseDates     , other.releaseDates     ) &&
+            Objects.equal(ratings          , other.ratings          ) &&
+            Objects.equal(synopsis         , other.synopsis         ) &&
+            Objects.equal(posters          , other.posters          ) &&
+            Objects.equal(abridgedCast     , other.abridgedCast     ) &&
+            Objects.equal(abridgedDirectors, other.abridgedDirectors) &&
+            Objects.equal(studio           , other.studio           ) &&
+            Objects.equal(alternateIds     , other.alternateIds     ) &&
+            Objects.equal(links            , other.links            );
+    }
+
+    @Override
+    public String toString() {
+        return Objects.toStringHelper(this)
+            .add("id"               , id               )
+            .add("title"            , title            )
+            .add("year"             , year             )
+            .add("mpaaRating"      ,  mpaaRating       )
+            .add("runtime"          , runtime          )
+            .add("criticsConsensus" , criticsConsensus )
+            .add("releaseDates"     , releaseDates     )
+            .add("ratings"          , ratings          )
+            .add("synopsis"         , synopsis         )
+            .add("posters"          , posters          )
+            .add("abridgedCast"     , abridgedCast     )
+            .add("abridgedDirectors", abridgedDirectors)
+            .add("studio"           , studio           )
+            .add("alternateIds"     , alternateIds     )
+            .add("links"            , links            )
+            .toString();
+    }
+}
