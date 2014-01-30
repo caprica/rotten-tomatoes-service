@@ -19,7 +19,8 @@ Movie movie = movieService.movie(770805418);
 The service implements a simple request rate-limiting restriction. This is
 specified by the `requestsPerSecondLimit` in the above code fragment.
 
-The current limit enforced by themoviedb.org is five requests per second.
+The current limit enforced by the Rotten Tomatoes web-services is five requests
+per second.
 
 Access to Rotten Tomatoes public web-services requires an application-specific
 API key. To use this service in your own application you must register at the
