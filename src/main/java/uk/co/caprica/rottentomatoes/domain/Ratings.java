@@ -19,8 +19,7 @@
 
 package uk.co.caprica.rottentomatoes.domain;
 
-import javax.xml.bind.annotation.XmlAttribute;
-
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.google.common.base.Objects;
 
 /**
@@ -28,16 +27,16 @@ import com.google.common.base.Objects;
  */
 public final class Ratings {
 
-    @XmlAttribute(name="critics_rating")
+    @JsonProperty("critics_rating")
     private String criticsRating;
 
-    @XmlAttribute(name="critics_score")
+    @JsonProperty("critics_score")
     private Integer criticsScore;
 
-    @XmlAttribute(name="audience_rating")
+    @JsonProperty("audience_rating")
     private String audienceRating;
 
-    @XmlAttribute(name="audience_score")
+    @JsonProperty("audience_score")
     private Integer audienceScore;
 
     public String getCriticsRating() {

@@ -21,11 +21,8 @@ package uk.co.caprica.rottentomatoes.domain;
 
 import java.util.Date;
 
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-
-import uk.co.caprica.rottentomatoes.domain.adapter.DateAdapter;
-
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.google.common.base.Objects;
 
 /**
@@ -33,11 +30,11 @@ import com.google.common.base.Objects;
  */
 public final class ReleaseDates {
 
-    @XmlAttribute(name="theater")
-    @XmlJavaTypeAdapter(DateAdapter.class)
+    @JsonProperty("theater")
+    @JsonFormat(shape=JsonFormat.Shape.STRING, pattern="yyyy-MM-dd")
     private Date theatre;
 
-    @XmlJavaTypeAdapter(DateAdapter.class)
+    @JsonFormat(shape=JsonFormat.Shape.STRING, pattern="yyyy-MM-dd")
     private Date dvd;
 
     public Date getTheatre() {

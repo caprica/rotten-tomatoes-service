@@ -22,8 +22,7 @@ package uk.co.caprica.rottentomatoes.domain;
 import java.util.List;
 import java.util.Map;
 
-import javax.xml.bind.annotation.XmlAttribute;
-
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.google.common.base.Objects;
 
 /**
@@ -39,15 +38,15 @@ public final class Movie {
 
     private List<String> genres;
 
-    @XmlAttribute(name="mpaa_rating")
+    @JsonProperty("mpaa_rating")
     private String mpaaRating;
 
     private Integer runtime;
 
-    @XmlAttribute(name="critics_consensus")
+    @JsonProperty("critics_consensus")
     private String criticsConsensus;
 
-    @XmlAttribute(name="release_dates")
+    @JsonProperty("release_dates")
     private ReleaseDates releaseDates;
 
     private Ratings ratings;
@@ -56,15 +55,15 @@ public final class Movie {
 
     private Map<String,String> posters;
 
-    @XmlAttribute(name="abridged_cast")
+    @JsonProperty("abridged_cast")
     private List<Cast> abridgedCast;
 
-    @XmlAttribute(name="abridged_directors")
+    @JsonProperty("abridged_directors")
     private List<Director> abridgedDirectors;
 
     private String studio;
 
-    @XmlAttribute(name="alternate_ids")
+    @JsonProperty("alternate_ids")
     private Map<String,Object> alternateIds;
 
     private Map<String,String> links;

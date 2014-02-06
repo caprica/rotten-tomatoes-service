@@ -23,8 +23,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-import javax.xml.bind.annotation.XmlAttribute;
-
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.google.common.base.Objects;
 
 /**
@@ -38,7 +37,7 @@ public final class MovieSearchResults implements Iterable<MovieSearchResult> {
 
     private Map<String,String> links;
 
-    @XmlAttribute(name="link_template")
+    @JsonProperty("link_template")
     private String linkTemplate;
 
     public Integer getTotal() {
